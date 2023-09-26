@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//http://localhost:3001/api/users/
+//callback req and res is your controller
+//api endpoint ->controller->model->return data to view
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);

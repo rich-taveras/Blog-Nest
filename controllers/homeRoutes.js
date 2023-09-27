@@ -20,11 +20,11 @@ router.get('/', async (req, res) => {
 //PostData is raw data, can't use raw data on handlebar template
     // Serialize data so the template can read it
     //take raw data and format it to json
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const post = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      posts, 
+      post, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -45,7 +45,7 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
 
-    const post = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
     res.render('post', {
       ...Post,

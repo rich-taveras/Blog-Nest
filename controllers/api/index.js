@@ -7,6 +7,6 @@ const postRoutes = require('./postRoutes');
 router.use('/users', userRoutes);
 
 //http://localhost:3001/api/post
-router.use('/post', postRoutes);
+router.use('/posts', postRoutes);
 
 module.exports = router;
